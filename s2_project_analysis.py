@@ -45,7 +45,7 @@ for project_name in project_names:
     for i in range(0, 2):
       
         if i == 0:
-            fig, ax = plt.subplots(figsize=(12.5, 3.2))
+            fig, ax = plt.subplots(figsize=(12.5, 2.8))
             sns.heatmap(binary_weekly_data.T, vmin=0,vmax=1.25, cmap=mycmap, 
                         cbar= False, xticklabels=xtick_labels, 
                         )
@@ -53,6 +53,7 @@ for project_name in project_names:
             ax.set_ylabel('Assignee')
             ax.set_xlabel('Week')
             ax.invert_yaxis()
+            ax.set_yticklabels(range(1, len(ax.get_yticklabels()) + 1))
 
             if not os.path.exists(f'{graphs_folder}/{project_name}'):
                 os.makedirs(f'{graphs_folder}/{project_name}')
@@ -67,7 +68,7 @@ for project_name in project_names:
             gs_kw = dict(width_ratios=[40, 1], height_ratios=[7, 1])
             fig, axd = plt.subplot_mosaic([['upper left', 'right'],
                                            ['lower left', 'right']],
-                                          gridspec_kw=gs_kw, figsize=(9.4, 3.5),
+                                          gridspec_kw=gs_kw, figsize=(9.4, 3.1),
                                           layout="constrained")
             ax1, ax2, cbar_ax = axd['upper left'], axd['lower left'], axd['right']
 #            cbar_ax.figure.set_size_inches(1, 1)
@@ -78,6 +79,7 @@ for project_name in project_names:
             ax1.set_ylabel('Assignee')
             ax1.set_xlabel('')
             ax1.invert_yaxis()
+            ax1.set_yticklabels(range(1, len(ax1.get_yticklabels()) + 1))
 
             # Plot the sum of issues per week in the second subplot
             sns.heatmap(issues_count.T, cmap=mycmap, 
@@ -86,7 +88,7 @@ for project_name in project_names:
                         ax=ax2, vmin=0, vmax=60, cbar_ax=cbar_ax
                         )
             ax2.set_xlabel('Week')
-            ax2.set_ylabel('#Issues')
+            ax2.set_ylabel('Total')
             ax2.set_xticklabels(ax2.get_xticklabels(), rotation=90)
 
             image_name = f'{graphs_folder}/{project_name}/Assignee_Involvement_{project_name}_weighted.png'
