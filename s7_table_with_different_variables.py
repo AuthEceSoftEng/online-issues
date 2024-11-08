@@ -36,5 +36,15 @@ for project in results:
         else:
             print(" & %.2f\%%" %(results[project][setting] * 100), end='')
     print(" \\\\")
+print("\\midrule")
+print("AVERAGE", end='')
+indexmax = np.argmax([np.mean([results[project][setting] for project in results]) for setting in results[project]])
+for i, setting in enumerate(results[project]):
+    avgper = np.mean([results[project][setting] for project in results])
+    if i == indexmax:
+        print(" & \\textbf{%.2f\%%}" %(avgper * 100), end='')
+    else:
+        print(" & %.2f\%%" %(avgper * 100), end='')
+print(" \\\\")
 print("\\bottomrule")
 
