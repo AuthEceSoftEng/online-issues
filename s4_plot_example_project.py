@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from properties import results_folder, graphs_folder
 from online_models import NaiveBayesOnlineModel, NaiveBayesWithADWINOnlineModel, AdaboostOnlineModel, AdaboostWithADWINOnlineModel
 
-project_name = "CASSANDRA"
+project_name = "DATALAB"
 allmodels = [NaiveBayesOnlineModel, NaiveBayesWithADWINOnlineModel, AdaboostOnlineModel, AdaboostWithADWINOnlineModel]
 
 fig, ax = plt.subplots(figsize=(5, 3))
@@ -25,6 +25,6 @@ for drift_detected in modelresults["drifts"]: # Place a line exactly where the d
     ax.axvline(drift_detected, color="black", linestyle="--")
 plt.legend()
 plt.tight_layout()
-#fig.savefig(os.path.join(graphs_folder, "_".join(filename.split()) + ".png"))
+fig.savefig(os.path.join(graphs_folder, "_".join(filename.split()) + ".pdf"))
 plt.show()
     

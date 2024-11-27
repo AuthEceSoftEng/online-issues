@@ -58,7 +58,7 @@ for project_name in project_names:
             if not os.path.exists(f'{graphs_folder}/{project_name}'):
                 os.makedirs(f'{graphs_folder}/{project_name}')
             
-            image_name = f'{graphs_folder}/{project_name}/Assignee_Involvement_{project_name}.png'
+            image_name = f'{graphs_folder}/{project_name}/Assignee_Involvement_{project_name}.pdf'
             plt.savefig(image_name, bbox_inches='tight')
             
         else:
@@ -91,7 +91,7 @@ for project_name in project_names:
             ax2.set_ylabel('Total')
             ax2.set_xticklabels(ax2.get_xticklabels(), rotation=90)
 
-            image_name = f'{graphs_folder}/{project_name}/Assignee_Involvement_{project_name}_weighted.png'
+            image_name = f'{graphs_folder}/{project_name}/Assignee_Involvement_{project_name}_weighted.pdf'
 #            plt.subplots_adjust(wspace=2,hspace=1)
             plt.savefig(image_name, bbox_inches='tight')
         

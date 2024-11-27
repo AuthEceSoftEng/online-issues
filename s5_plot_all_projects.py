@@ -67,6 +67,6 @@ for c, model in enumerate(allmodels):
     ax.legend(handles=handles, labels=labels, loc='upper left')
 
 plt.tight_layout()
-plt.savefig(os.path.join(graphs_folder, "ALL_naivebayes_vs_adaboost.png"))
+plt.savefig(os.path.join(graphs_folder, "ALL_naivebayes_vs_adaboost.pdf"))
 plt.show()
 
