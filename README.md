@@ -11,8 +11,8 @@ of people in the team, different priorities in development).
 The complete description of our methodology is available at the publication:
 ```
 "Towards Effective Issue Assignment using Online Machine Learning"
-Paper sent at the 22nd International Conference on Mining Software
-Repositories (MSR '25), 2025.
+Paper sent at the 29th International Conference on Evaluation and
+Assessment in Software Engineering (EASE 2025), 2025.
 ```
 
 This repository contains all code and instructions required to reproduce the
