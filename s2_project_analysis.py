@@ -45,7 +45,7 @@ for project_name in project_names:
     for i in range(0, 2):
       
         if i == 0:
-            fig, ax = plt.subplots(figsize=(12.5, 2.8))
+            fig, ax = plt.subplots(figsize=(12.5, 2.5))
             sns.heatmap(binary_weekly_data.T, vmin=0,vmax=1.25, cmap=mycmap, 
                         cbar= False, xticklabels=xtick_labels, 
                         )

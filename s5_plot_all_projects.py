@@ -24,7 +24,7 @@ print(accuracy)
 
 #project_names = [project_name + "\n(%d drifts)" % alldrifts[project_name] for project_name in project_names]
 
-fig, ax = plt.subplots(figsize=(10, 4))
+fig, ax = plt.subplots(figsize=(10, 3.3))
 for c, model in enumerate(allmodels):
     model_name = model().name
     accuracies = accuracy[model_name]
@@ -53,7 +53,7 @@ for c, model in enumerate(allmodels):
     # Set x-axis label size and rotate the labels for better readability
     ax.set_xticklabels(project_names)
     
-    ax.set_ylim(0, 1.14)
+    ax.set_ylim(0, 1.08)
 
     # Manually add a single legend entry for the average line
     #avg_line = plt.Line2D([0], [0], color='black', linestyle='--', linewidth=1)
@@ -64,7 +64,7 @@ for c, model in enumerate(allmodels):
     labels.append('Avg value')
 
     # Set the legend with all required labels
-    ax.legend(handles=handles, labels=labels, loc='upper left')
+    ax.legend(handles=handles, labels=labels, loc='upper left', ncol=2)
 
 plt.tight_layout()
 plt.savefig(os.path.join(graphs_folder, "ALL_naivebayes_vs_adaboost.pdf"))

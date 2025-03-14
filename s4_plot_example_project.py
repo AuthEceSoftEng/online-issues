@@ -7,7 +7,7 @@ from online_models import NaiveBayesOnlineModel, NaiveBayesWithADWINOnlineModel,
 project_name = "DATALAB"
 allmodels = [NaiveBayesOnlineModel, NaiveBayesWithADWINOnlineModel, AdaboostOnlineModel, AdaboostWithADWINOnlineModel]
 
-fig, ax = plt.subplots(figsize=(5, 3))
+fig, ax = plt.subplots(figsize=(5, 2.8))
 plt.xlabel("Number of Instances")
 plt.ylabel("Moving Average Accuracy")
 for m, model in enumerate(allmodels):
