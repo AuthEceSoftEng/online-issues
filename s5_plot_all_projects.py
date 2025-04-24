@@ -24,7 +24,7 @@ print(accuracy)
 
 #project_names = [project_name + "\n(%d drifts)" % alldrifts[project_name] for project_name in project_names]
 
-fig, ax = plt.subplots(figsize=(10, 3))
+fig, ax = plt.subplots(figsize=(10, 2.9))
 for c, model in enumerate(allmodels):
     model_name = model().name
     accuracies = accuracy[model_name]
@@ -53,7 +53,7 @@ for c, model in enumerate(allmodels):
     # Set x-axis label size and rotate the labels for better readability
     ax.set_xticklabels(project_names)
     
-    ax.set_ylim(0, 1.12)
+    ax.set_ylim(0, 1.15)
 
     # Manually add a single legend entry for the average line
     #avg_line = plt.Line2D([0], [0], color='black', linestyle='--', linewidth=1)
